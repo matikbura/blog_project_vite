@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    html,body{
+        @apply h-full
+    }
+
+    .chatting textarea{
+        border: none!important;
+        overflow: auto!important;;
+        outline: none!important;;
+
+        -webkit-box-shadow: none!important;;
+        -moz-box-shadow: none!important;;
+        box-shadow: none!important;;
+
+        resize: none!important;; /*remove the resize handle on the bottom right*/
+    }
+}
+
+@layer utilities {
+
+}
+
+
+::-webkit-scrollbar
+
+{
+
+    width: 5px;
+
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+::-webkit-scrollbar-track {
+
+    @apply border-l-2
+
+}
+
+/*定义滑块 内阴影+圆角*/
+
+::-webkit-scrollbar-thumb
+{
+    @apply bg-gray-400 border-opacity-40 rounded-lg
+}
+

@@ -1,0 +1,66 @@
+      <el-table :data="page.rows" style="width: 100%">
+        <el-table-column label="标签名称" width="180">
+          <template #default="scope">
+            <div style="display: flex; align-items: center">
+              <el-icon><timer /></el-icon>
+              <span style="margin-left: 10px">{{ scope.row.name }}</span>
+            </div>
+          </template>
+        </el-table-column>
+        <el-table-column label="标签颜色" width="180">
+          <template #default="scope">
+            <div style="display: flex; align-items: center">
+              <el-icon><timer /></el-icon>
+              <span style="margin-left: 10px">{{ scope.row.tabColor }}</span>
+            </div>
+          </template>
+        </el-table-column>
+        <el-table-column label="预览" width="180">
+          <template #default="scope">
+            <div style="display: flex; align-items: center">
+              <el-tag
+                :key="scope.row.tagId"
+                class="mx-1"
+                type="success"
+                effect="dark"
+                :color="scope.row.tagColor"
+              >
+                {{ scope.row.name}}
+              </el-tag>
+            </div>
+          </template>
+        </el-table-column>
+        <el-table-column label="创建时间" width="180">
+          <template #default="scope">
+            <div style="display: flex; align-items: center">
+              <el-icon><timer /></el-icon>
+              <span style="margin-left: 10px">{{
+                scope.row.createTimeStr
+              }}</span>
+            </div>
+          </template>
+        </el-table-column>
+                <el-table-column label="修改时间" width="180">
+          <template #default="scope">
+            <div style="display: flex; align-items: center">
+              <el-icon><timer /></el-icon>
+              <span style="margin-left: 10px">{{
+                scope.row.modifyTimeStr
+              }}</span>
+            </div>
+          </template>
+        </el-table-column>
+        <el-table-column label="Operations">
+          <template #default="scope">
+            <el-button size="small" @click="handleEdit(scope.$index, scope.row)"
+              >修改</el-button
+            >
+            <el-button
+              size="small"
+              type="danger"
+              @click="handleDelete(scope.$index, scope.row)"
+              >删除</el-button
+            >
+          </template>
+        </el-table-column>
+      </el-table>
